@@ -47,7 +47,7 @@ export const SiderMenu = () => {
         <ul className="">
           {menu.map((item, index) => (
             <li className="mb-[30px]" key={index}>
-              <NavLink to={item.link} className="text-[white] font-[700] text-[16px] flex gap-[20px] hover:text-[#00ADEF]"> 
+              <NavLink to={item.link} className="text-[white] font-[700] text-[16px] flex gap-[20px] hover:text-[#00ADEF] capitalize"> 
                 <span>
                   {item.icon}
                 </span>
