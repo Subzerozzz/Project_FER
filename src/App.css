@@ -11,3 +11,21 @@ body{
 a.active{
   color: #00ADEF
 }
+
+.range-sm::-webkit-slider-thumb{
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #00ADEF
+}
+
+.range-sm::-moz-range-thumb{
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #00ADEF
+}
