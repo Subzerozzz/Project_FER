@@ -13,7 +13,7 @@ export const LayoutDefault = () => {
             </div>
             <div className="flex-1 mt-[20px]">
               <HeaderSearch />
-              <main className="mb-[100px]">
+              <main className="mb-[150px]">
                 <Outlet />
               </main>
             </div>
