@@ -1,5 +1,5 @@
+import { FaHeart, FaPlay } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { FaPlay } from "react-icons";
 
 export const HomePage = () => {
   return (
@@ -45,8 +45,11 @@ export const HomePage = () => {
                 <div>24.500 lượt nghe</div>
               </div>
               <div className="">
-                <button>
+                <button className="">
                   <FaPlay />
+                </button>
+                <button className="">
+                  <FaHeart />
                 </button>
               </div>
             </div>
