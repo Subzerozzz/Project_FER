@@ -1,21 +1,21 @@
 export const SingersPage = () => {
   const singers = [
-  { id: 1, name: "Sơn Tùng MTP",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 2, name: "Mỹ Tâm",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 3, name: "Đen Vâu",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 4, name: "Hòa Minzy",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 5, name: "Jack",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 6, name: "Sơn Tùng MTP",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 7, name: "Mỹ Tâm",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 8, name: "Đen Vâu",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 9, name: "Hòa Minzy", title: "ABC",image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 10, name: "Jack", title: "ABC",image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 11, name: "Jack",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 12, name: "Sơn Tùng MTP",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 13, name: "Mỹ Tâm",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 14, name: "Đen Vâu",title: "ABC", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 15, name: "Hòa Minzy", title: "ABC",image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" },
-  { id: 16, name: "Jack", title: "ABC",image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18yWzkfTbO6_49aWm3-bvLzzKBaedfug8cw&s" }
+  { id: 1, name: "Sơn Tùng MTP",title: "ABC", image: "/demo/singer/son_tung.jpg" },
+  { id: 2, name: "Nal",title: "ABC", image: "/demo/singer/nal.jpg" },
+  { id: 3, name: "Tuấn Hưng",title: "ABC", image: "/demo/singer/tuan_hung.jpg" },
+  { id: 4, name: "Jimmii Nguyễn",title: "ABC", image: "/demo/singer/jimmii-nguyen.jpg" },
+  { id: 5, name: "Big Daddy",title: "ABC", image: "/demo/singer/big_daddy.jpg" },
+  { id: 6, name: "Soobin Hoàng Sơn",title: "ABC", image: "/demo/singer/soobin.jpg" },
+  { id: 7, name: "Mỹ Tâm",title: "ABC", image: "/demo/singer/my_tam.jpg" },
+  { id: 8, name: "Đen Vâu",title: "ABC", image: "/demo/singer/den_vau.jpg" },
+  { id: 9, name: "Hòa Minzy", title: "ABC",image: "/demo/singer/hoa_minzy.jpg" },
+  { id: 10, name: "Min", title: "ABC",image: "/demo/singer/min.jpg" },
+  { id: 11, name: "Du Thiên",title: "ABC", image: "/demo/singer/du_thien.jpg" },
+  { id: 12, name: "Tùng Dương",title: "ABC", image: "/demo/singer/tung_duong.jpg" },
+  { id: 13, name: "Anh Tú",title: "ABC", image: "/demo/singer/anh_tu.jpg" },
+  { id: 14, name: "Phan Mạnh Quỳnh",title: "ABC", image: "/demo/singer/phan_manh_quynh.jpg" },
+  { id: 15, name: "Quang Hung", title: "ABC",image: "/demo/singer/quang_hung.jpg" },
+  
 
 
 ];
