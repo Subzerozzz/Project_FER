@@ -1,4 +1,4 @@
-import { Section1 } from "./Section1";
+import { Section1 } from "./SectionForCategories/Section1";
 
 export const Categories = () => {
   return (

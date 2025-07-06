@@ -1,5 +1,5 @@
-import { CardItem } from "../../components/common/Card/CardItem";
-import { Title } from "../../components/common/Title/Title";
+import { CardItem } from "../../../components/common/Card/CardItem";
+import { Title } from "../../../components/common/Title/Title";
 
 export const Section1 = () => {
   const data = [
