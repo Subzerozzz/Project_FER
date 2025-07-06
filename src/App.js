@@ -7,6 +7,7 @@ import { LoginPage } from './pages/Authen/Login';
 import { RegisterPage } from './pages/Authen/Register';
 import { Categories } from './pages/Categories/Categories';
 import { SingersPage } from './pages/Singers/Singers';
+import { Favorite } from  './pages/Favorite/Favorite';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path='register' element={<RegisterPage/>} />
             <Route path='categories' element={<Categories/>} />
             <Route path='singers' element={<SingersPage />} />
+            <Route path='wishlist' element={<Favorite />} />
           </Route>
         </Routes>
       </BrowserRouter> 
