@@ -8,6 +8,8 @@ import { CategoriesLayout } from "./pages/Categories/CategoriesLayout";
 import { CategoryItem } from "./pages/Categories/CategoryItem";
 import { HomePage } from "./pages/Home/Home";
 import { SingersPage } from "./pages/Singers/Singers";
+import { SongDetail } from "./pages/Song/SongDetail";
+import { SongLayout } from "./pages/Song/SongLayout";
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
             <Route path="categories" element={<CategoriesLayout />}>
               <Route index element={<Categories />}></Route>
               <Route path=":categoryID" element={<CategoryItem />}></Route>
+            </Route>
+            <Route path="song" element={<SongLayout />}>
+              <Route path=":songID" element={<SongDetail />}></Route>
             </Route>
             <Route path="singers" element={<SingersPage />} />
           </Route>
