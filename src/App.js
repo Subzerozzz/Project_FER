@@ -7,6 +7,7 @@ import { Categories } from "./pages/Categories/Categories";
 import { CategoriesLayout } from "./pages/Categories/CategoriesLayout";
 import { CategoryItem } from "./pages/Categories/CategoryItem";
 import { HomePage } from "./pages/Home/Home";
+import { SearchPage } from "./pages/Search/Search";
 import { SingersPage } from "./pages/Singers/Singers";
 import { SongDetail } from "./pages/Song/SongDetail";
 import { SongLayout } from "./pages/Song/SongLayout";
@@ -28,6 +29,7 @@ function App() {
               <Route path=":songID" element={<SongDetail />}></Route>
             </Route>
             <Route path="singers" element={<SingersPage />} />
+            <Route path="search" element={<SearchPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
