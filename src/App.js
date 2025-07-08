@@ -7,10 +7,13 @@ import { Categories } from "./pages/Categories/Categories";
 import { CategoriesLayout } from "./pages/Categories/CategoriesLayout";
 import { CategoryItem } from "./pages/Categories/CategoryItem";
 import { HomePage } from "./pages/Home/Home";
-import { SearchPage } from "./pages/Search/Search";
-import { SingersPage } from "./pages/Singers/Singers";
+import { SearchPage } from "./pages/Search/SearchPage";
+import { SingerDeatail } from "./pages/Singers/SingerDetail";
+import { SingerLayout } from "./pages/Singers/SingerLayout";
+import { SingersPage } from "./pages/Singers/SingersPage";
 import { SongDetail } from "./pages/Song/SongDetail";
 import { SongLayout } from "./pages/Song/SongLayout";
+import { Wishlist } from "./pages/Wishlist/Wishlist";
 
 function App() {
   return (
@@ -28,8 +31,12 @@ function App() {
             <Route path="song" element={<SongLayout />}>
               <Route path=":songID" element={<SongDetail />}></Route>
             </Route>
-            <Route path="singers" element={<SingersPage />} />
+            <Route path="singers" element={<SingerLayout />}>
+              <Route index element={<SingersPage />}></Route>
+              <Route path=":singerID" element={<SingerDeatail />}></Route>
+            </Route>
             <Route path="search" element={<SearchPage />} />
+            <Route path="wishlist" element={<Wishlist />} />
           </Route>
         </Routes>
       </BrowserRouter>
