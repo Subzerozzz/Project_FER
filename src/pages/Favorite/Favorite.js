@@ -33,7 +33,7 @@ const Favorite = () => {
         {favoriteSongs.map((song, index) => (
           <li
             key={song.id}
-            className="relative flex items-center justify-between bg-gray-800 rounded-lg px-4 py-2"
+            className="relative flex items-center justify-between bg-[#212121] rounded-lg px-4 py-2"
           >
             <div className="flex items-center gap-4 w-[300px]">
               <button onClick={() => togglePlay(index)} className="text-white">
