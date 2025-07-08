@@ -7,7 +7,7 @@ import { LoginPage } from './pages/Authen/Login';
 import { RegisterPage } from './pages/Authen/Register';
 import { Categories } from './pages/Categories/Categories';
 import { SingersPage } from './pages/Singers/Singers';
-import { Favorite } from  './pages/Favorite/Favorite';
+import Favorite from './pages/Favorite/Favorite';
 
 function App() {
   return (
