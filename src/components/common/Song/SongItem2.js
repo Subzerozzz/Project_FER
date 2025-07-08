@@ -1,7 +1,7 @@
 import { FaPlay, FaRegHeart } from "react-icons/fa6";
 
 export const SongItem2 = (props) => {
-  const { image, title, singer, time } = props;
+  const { image, title, singerName, time } = props;
 
   return (
     <>
@@ -17,7 +17,7 @@ export const SongItem2 = (props) => {
         </div>
         {/* Center */}
         <div className="font-[400] text-[14px] text-[#FFFFFF] w-[30%] text-center">
-          {singer}
+          {singerName.join(", ")}
         </div>
         {/* Right  */}
         <div className="flex gap-[18px] w-[30%] justify-end items-center">

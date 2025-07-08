@@ -1,51 +1,20 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { CardItem } from "../../../components/common/Card/CardItem";
 import { Title } from "../../../components/common/Title/Title";
 
 export const Section1 = () => {
-  const data = [
-    {
-      title: "Nhạc Trẻ",
-      image: "/demo/home/image-6.png",
-      description:
-        "Top 100 Nhạc Trẻ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Trẻ",
-      link: "#",
-    },
-    {
-      title: "Nhạc Trẻ",
-      image: "/demo/home/image-6.png",
-      description:
-        "Top 100 Nhạc Trẻ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Trẻ",
-      link: "#",
-    },
-    {
-      title: "Nhạc Trẻ",
-      image: "/demo/home/image-6.png",
-      description:
-        "Top 100 Nhạc Trẻ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Trẻ",
-      link: "#",
-    },
-    {
-      title: "Nhạc Trẻ",
-      image: "/demo/home/image-6.png",
-      description:
-        "Top 100 Nhạc Trẻ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Trẻ",
-      link: "#",
-    },
-    {
-      title: "Nhạc Trẻ",
-      image: "/demo/home/image-6.png",
-      description:
-        "Top 100 Nhạc Trẻ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Trẻ",
-      link: "#",
-    },
-    {
-      title: "Nhạc Trẻ",
-      image: "/demo/home/image-6.png",
-      description:
-        "Top 100 Nhạc Trẻ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Trẻ",
-      link: "#",
-    },
-  ];
+  const [dataFinal, setDataFinal] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:9999/categories").then((res) => {
+      const categoryArrayRaw = res.data;
+      const categoryArray = categoryArrayRaw.map((item) => {
+        return { ...item, link: `/categories/${item.id}` };
+      });
+      setDataFinal(categoryArray);
+    });
+  }, []);
 
   return (
     <>
@@ -54,9 +23,15 @@ export const Section1 = () => {
 
         <div className="grid grid-cols-5 gap-[20px]">
           {/* Item  */}
-          {data.map((item, index) => (
-            <CardItem key={index + 1} {...item} />
-          ))}
+          {dataFinal.length > 0 ? (
+            <>
+              {dataFinal.map((item) => (
+                <CardItem key={item.id} {...item} />
+              ))}
+            </>
+          ) : (
+            <>Không có dữ liệu</>
+          )}
         </div>
       </div>
     </>
