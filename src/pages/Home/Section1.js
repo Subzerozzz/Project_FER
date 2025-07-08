@@ -1,7 +1,33 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { SongItem } from "../../components/common/Song/SongItem";
 import { Title } from "../../components/common/Title/Title";
 
 export const Section1 = () => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios.get("http://localhost:9999/songs").then((res) => {
+      const songArray = res.data.slice(0, 3);
+      axios.get("http://localhost:9999/singers").then((res2) => {
+        console.log(res2.data);
+
+        const songArray2 = songArray.map((item) => {
+          const singerId = item.singerId;
+          let singerString = singerId.map((id) => {
+            return res2.data.find((item) => item.id == id).title;
+          });
+
+          const newItem = {
+            ...item,
+            singerName: singerString,
+          };
+          return newItem;
+        });
+        setData(songArray2);
+      });
+    });
+  }, []);
+
   return (
     <>
       <div className="flex gap-[20px] mb-[30px]">
@@ -31,26 +57,21 @@ export const Section1 = () => {
         <div className="flex-1">
           <Title text="Nghe Nhiều" />
           <div className="grid gap-[12px]">
-            {/* Item */}
-            <SongItem
-              image="/demo/home/image-3.png"
-              title="Cô Phòng"
-              singer="Hồ Quang Hiếu, Huỳnh Văn"
-              listen={24500}
-            />
-            <SongItem
-              image="/demo/home/image-4.png"
-              title="Hoa Nở Bên Đường"
-              singer="Quang Đăng Trần, ACV"
-              listen={24500}
-            />
-            <SongItem
-              image="/demo/home/image-5.png"
-              title="Hứa Đợi Nhưng Chẳng Tới"
-              singer="Lâm Tuấn, Trần Thiên Vương"
-              listen={24500}
-            />
-            {/* End Item  */}
+            {data.length > 0 ? (
+              <>
+                {data.map((item) => (
+                  <SongItem
+                    key={item.id}
+                    image={item.image}
+                    title={item.title}
+                    singer={item.singerName}
+                    listen={item.listen}
+                  />
+                ))}
+              </>
+            ) : (
+              <div>Không có dữ liệu</div>
+            )}
           </div>
         </div>
       </div>
