@@ -40,3 +40,12 @@ a.active{
 }
 
 /* end button play  */
+
+/* button volume  */
+.play-audio .inner-button-volume.off .inner-volume-high{
+  display: none;
+}
+.play-audio .inner-button-volume.off .inner-volume-off{
+  display: block;
+}
+/* end button volume  */

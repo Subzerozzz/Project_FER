@@ -1,4 +1,11 @@
 export const PlayTime = () => {
+  const handleChange = (event) => {
+    const value = event.target.value;
+    const elementInnerAudio = document.querySelector(
+      ".play-audio .inner-audio"
+    );
+    elementInnerAudio.currentTime = value;
+  };
   return (
     <>
       <div className="mt-[11px] relative inner-play-time">
@@ -9,6 +16,7 @@ export const PlayTime = () => {
           max={0}
           defaultValue={0}
           className="w-full h-[4px] bg-[#FFFFFF0A] rounded-[50px] cursor-pointer appearance-none range-sm inner-total"
+          onChange={handleChange}
         />
       </div>
     </>
