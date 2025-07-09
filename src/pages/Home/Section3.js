@@ -11,7 +11,7 @@ export const Section3 = () => {
       const singerArrayRaw = res.data;
       if (singerArrayRaw) {
         const singerArray = singerArrayRaw.map((item) => {
-          return { ...item, link: `singers/${item.id}` };
+          return { ...item, link: `/singers/${item.id}` };
         });
         setDataFinal(singerArray);
       }

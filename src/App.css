@@ -30,3 +30,13 @@ a.active{
   cursor: pointer;
   background-color: #00ADEF
 }
+
+/* button-play  */
+.play-audio .inner-button-play.play .inner-icon-play {
+  display: none;
+}
+.play-audio .inner-button-play.play .inner-icon-pause {
+  display: block;
+}
+
+/* end button play  */

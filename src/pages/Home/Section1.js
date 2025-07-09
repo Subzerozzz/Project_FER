@@ -19,6 +19,7 @@ export const Section1 = () => {
 
           const newItem = {
             ...item,
+            link: `/song/${item.id}`,
             singerName: singerString,
           };
           return newItem;
@@ -62,10 +63,13 @@ export const Section1 = () => {
                 {data.map((item) => (
                   <SongItem
                     key={item.id}
+                    id={item.id}
                     image={item.image}
                     title={item.title}
                     singer={item.singerName}
                     listen={item.listen}
+                    link={item.link}
+                    audio={item.audio}
                   />
                 ))}
               </>
