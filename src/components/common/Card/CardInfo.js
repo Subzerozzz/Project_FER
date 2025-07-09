@@ -1,5 +1,5 @@
 export const CardInfo = (props) => {
-  const { image, title, description } = props;
+  const { image, title, description, singerName = "" } = props;
   return (
     <>
       <div className="flex gap-[20px] items-center mb-[30px]">
@@ -14,7 +14,11 @@ export const CardInfo = (props) => {
         <div className="flex-1">
           <div className="text-[#00ADEF] font-[700] text-[35px]">{title}</div>
           <div className="text-[#EFEEE0] font-[400] text-[14px]">
-            {description}
+            {singerName != "" ? (
+              <>{singerName.join(", ")}</>
+            ) : (
+              <>{description}</>
+            )}
           </div>
         </div>
       </div>

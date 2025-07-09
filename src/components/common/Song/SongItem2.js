@@ -1,7 +1,8 @@
 import { FaPlay, FaRegHeart } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 export const SongItem2 = (props) => {
-  const { image, title, singerName, time } = props;
+  const { image, title, singerName, time, link, singerId } = props;
 
   return (
     <>
@@ -13,11 +14,13 @@ export const SongItem2 = (props) => {
             <img src={image} />
           </div>
 
-          <div className="font-[700] text-[14px] text-[#FFFFFF] ">{title}</div>
+          <div className="font-[700] text-[14px] text-[#FFFFFF] ">
+            <Link to={link}>{title}</Link>
+          </div>
         </div>
         {/* Center */}
         <div className="font-[400] text-[14px] text-[#FFFFFF] w-[30%] text-center">
-          {singerName.join(", ")}
+          {singerName != null ? <>{singerName.join(", ")}</> : <>{singerId}</>}
         </div>
         {/* Right  */}
         <div className="flex gap-[18px] w-[30%] justify-end items-center">
