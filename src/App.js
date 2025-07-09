@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { LayoutDefault } from "./layouts/LayoutDefault";
+import { NotFound } from "./pages/404NotFound/404NotFound";
 import { LoginPage } from "./pages/Authen/Login";
 import { RegisterPage } from "./pages/Authen/Register";
 import { Categories } from "./pages/Categories/Categories";
@@ -37,6 +38,7 @@ function App() {
             </Route>
             <Route path="search" element={<SearchPage />} />
             <Route path="wishlist" element={<Wishlist />} />
+            <Route path="*" element={<NotFound />}></Route>
           </Route>
         </Routes>
       </BrowserRouter>
