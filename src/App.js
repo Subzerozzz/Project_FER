@@ -6,7 +6,9 @@ import { LayoutDefault } from './layouts/LayoutDefault';
 import { LoginPage } from './pages/Authen/Login';
 import { RegisterPage } from './pages/Authen/Register';
 import { Categories } from './pages/Categories/Categories';
-import { SingersPage } from './pages/Singers/Singers';
+import { SingerDeatail } from "./pages/Singers/SingerDetail";
+import { SingerLayout } from "./pages/Singers/SingerLayout";
+
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
             <Route path='login' element={<LoginPage/>} />
             <Route path='register' element={<RegisterPage/>} />
             <Route path='categories' element={<Categories/>} />
-            <Route path='singers' element={<SingersPage />} />
+            <Route path="singers" element={<SingerLayout />}>
+              <Route path=":singerID" element={<SingerDeatail />}></Route>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter> 
