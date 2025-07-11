@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { CardItem } from "../../components/common/Card/CardItem";
 import { Title } from "../../components/common/Title/Title";
 
-export const Section3 = () => {
+export const Section1 = () => {
   const [dataFinal, setDataFinal] = useState([]);
 
   useEffect(() => {
@@ -20,13 +20,20 @@ export const Section3 = () => {
   return (
     <>
       <div className="">
-        <Title text="Ca Sĩ Nổi Bật" />
+        <Title text="Danh Sách Ca Sĩ" />
 
         <div className="grid grid-cols-5 gap-[20px]">
-          {/* Item  */}
-          {dataFinal.map((item, index) => (
-            <CardItem key={index} {...item} />
-          ))}
+          {dataFinal.length > 0 ? (
+            <>
+              {dataFinal.map((item, index) => (
+                <CardItem key={index} {...item} />
+              ))}
+            </>
+          ) : (
+            <>
+              <Title text="Không Có Ca Sĩ Nào" />
+            </>
+          )}
         </div>
       </div>
     </>
