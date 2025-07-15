@@ -1,55 +1,20 @@
-// import { Outlet } from "react-router-dom"
-// import { HeaderSearch } from "../components/common/HeaderSearch/HeaderSearch"
-// import { Play } from "../components/common/Play/Play"
-// import { Sider } from "../components/common/Sider/Sider"
-
-// export const LayoutDefault = () => {
-//   return(
-//     <>
-//       <div className=''>
-//         <div className='container mx-[auto]'>
-//           <div className="flex gap-[20px]">
-//             <div className="sidebar w-[280px]">
-//             <Sider />
-//             </div>
-//             <div className="flex-1 mt-[20px]">
-//               <HeaderSearch/>
-//               <main className="mb-[100px]">
-//                 <Outlet/>
-//               </main>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//       <div>
-//         <Play/>
-//       </div> 
-      
-//     </>
-//   )
-// }
-
-import { Outlet } from "react-router-dom"
-import { HeaderSearch } from "../components/common/HeaderSearch/HeaderSearch"
-import { Play } from "../components/common/Play/Play"
-import { Sider } from "../components/common/Sider/Sider"
-import { useState } from "react"
-
+import { Outlet } from "react-router-dom";
+import { HeaderSearch } from "../components/common/HeaderSearch/HeaderSearch";
+import { Play } from "../components/common/Play/Play";
+import { Sider } from "../components/common/Sider/Sider";
 export const LayoutDefault = () => {
-  const [keyword, setKeyword] = useState("");
-
-  return(
+  return (
     <>
-      <div className=''>
-        <div className='container mx-[auto]'>
+      <div className="">
+        <div className="container mx-[auto]">
           <div className="flex gap-[20px]">
             <div className="sidebar w-[280px]">
               <Sider />
             </div>
             <div className="flex-1 mt-[20px]">
-              <HeaderSearch onSearch={(kw) => setKeyword(kw)} />
-              <main className="mb-[100px]">
-                <Outlet context={{ keyword }} />
+              <HeaderSearch />
+              <main className="mb-[150px]">
+                <Outlet />
               </main>
             </div>
           </div>
@@ -59,5 +24,5 @@ export const LayoutDefault = () => {
         <Play />
       </div>
     </>
-  )
-}
+  );
+};

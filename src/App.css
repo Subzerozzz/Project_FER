@@ -13,6 +13,7 @@ a.active{
 }
 
 .range-sm::-webkit-slider-thumb{
+  -webkit-appearance: none; 
   appearance: none;
   width: 8px;
   height: 8px;
@@ -29,3 +30,22 @@ a.active{
   cursor: pointer;
   background-color: #00ADEF
 }
+
+/* button-play  */
+.play-audio .inner-button-play.play .inner-icon-play {
+  display: none;
+}
+.play-audio .inner-button-play.play .inner-icon-pause {
+  display: block;
+}
+
+/* end button play  */
+
+/* button volume  */
+.play-audio .inner-button-volume.off .inner-volume-high{
+  display: none;
+}
+.play-audio .inner-button-volume.off .inner-volume-off{
+  display: block;
+}
+/* end button volume  */
