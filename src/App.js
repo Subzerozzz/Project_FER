@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { LayoutDefault } from "./layouts/LayoutDefault";
@@ -16,26 +15,12 @@ import { SingersPage } from "./pages/Singers/SingersPage";
 import { SongDetail } from "./pages/Song/SongDetail";
 import { SongLayout } from "./pages/Song/SongLayout";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
-=======
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
-import { HomePage } from './pages/Home/Home';
-import { LayoutDefault } from './layouts/LayoutDefault';
-import { LoginPage } from './pages/Authen/Login';
-import { RegisterPage } from './pages/Authen/Register';
-import { Categories } from './pages/Categories/Categories';
-import { SingerDeatail } from "./pages/Singers/SingerDetail";
-import { SingerLayout } from "./pages/Singers/SingerLayout";
-
->>>>>>> origin/Singer_detail
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-<<<<<<< HEAD
           <Route element={<LayoutDefault />}>
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={<LoginPage />} />
@@ -54,16 +39,6 @@ function App() {
             <Route path="search" element={<SearchPage />} />
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="*" element={<NotFound />}></Route>
-=======
-          <Route element={<LayoutDefault/>} >
-            <Route path='/' element={<HomePage />} />
-            <Route path='login' element={<LoginPage/>} />
-            <Route path='register' element={<RegisterPage/>} />
-            <Route path='categories' element={<Categories/>} />
-            <Route path="singers" element={<SingerLayout />}>
-              <Route path=":singerID" element={<SingerDeatail />}></Route>
-            </Route>
->>>>>>> origin/Singer_detail
           </Route>
         </Routes>
       </BrowserRouter>
