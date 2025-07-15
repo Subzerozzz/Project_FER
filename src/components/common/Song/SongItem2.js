@@ -1,5 +1,6 @@
-import { FaPlay, FaRegHeart } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { ButtonPlay } from "../Button/ButtonPlay";
 
 export const SongItem2 = (props) => {
   const { image, title, singerName, time, link, singerId } = props;
@@ -9,7 +10,7 @@ export const SongItem2 = (props) => {
       <div className="flex items-center justify-between px-[18px] py-[10px] bg-[#212121] rounded-[15px]">
         {/* Left */}
         <div className="flex items-center gap-[12px] w-[40%]">
-          <FaPlay className="text-[21px] text-[#FFFFFF]" />
+          <ButtonPlay {...props} className="text-[21px] text-[#FFFFFF]" />
           <div className="w-[42px]">
             <img src={image} />
           </div>
