@@ -15,13 +15,10 @@ export const Wishlist = () => {
     axios.get("http://localhost:9999/singers").then((res) => setSingers(res.data));
   }, []);
 
-  const getSingerNames = (ids) => {
-  if (!Array.isArray(ids)) return [];
-  return ids.map((id) => {
-    const singer = singers.find((s) => s.id === String(id)); 
-    return singer ? singer.title : "Unknown";
-  });
-};
+  const getSingerNames = (ids) => 
+  Array.isArray(ids)
+    ? ids.map(id => singers.find(s => s.id === String(id))?.title || "Unknown")
+    : [];
 
 
   const togglePlay = (song) => {
