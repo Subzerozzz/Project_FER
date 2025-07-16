@@ -115,5 +115,20 @@
       "lyric": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "listen": 22800
     }
-  ]
+  ],
+  
+"users": [
+  {
+    "id": 1,
+    "email": "admin@example.com",
+    "password": "123456",
+    "name": "Admin"
+  },
+  {
+    "id": 2,
+    "email": "user@example.com",
+    "password": "abcdef",
+    "name": "Người dùng"
+  }
+]
 }
