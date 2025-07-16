@@ -1,7 +1,7 @@
 import { FaPlay } from "react-icons/fa6";
 
 export const ButtonPlay = (props) => {
-  const { key, image, title, singer, listen, link, audio } = props;
+  const { image, title, singer, audio, className = "" } = props;
 
   const handlePlay = () => {
     const elementPlayAudio = document.querySelector(".play-audio");
@@ -60,10 +60,7 @@ export const ButtonPlay = (props) => {
   };
   return (
     <>
-      <button
-        onClick={handlePlay}
-        className="p-[10px] rounded-[999px] text-[#FFFFFF] border border-white"
-      >
+      <button onClick={handlePlay} className={className}>
         <FaPlay />
       </button>
     </>

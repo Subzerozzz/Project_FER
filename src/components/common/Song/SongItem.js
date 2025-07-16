@@ -25,7 +25,10 @@ export const SongItem = (props) => {
           </div>
         </div>
         <div className="flex gap-[10px]">
-          <ButtonPlay {...props} />
+          <ButtonPlay
+            {...props}
+            className="p-[10px] rounded-[999px] text-[#FFFFFF] border border-white"
+          />
           <button className="p-[10px] rounded-[999px] text-[#FFFFFF] border border-white">
             <FaHeart />
           </button>
