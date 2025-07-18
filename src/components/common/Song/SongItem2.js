@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ButtonPlay } from "../Button/ButtonPlay";
 
 export const SongItem2 = (props) => {
-  const { image, title, singerName, time, link, singerId } = props;
+  const { image, title, singer, time, link, singerId } = props;
 
   return (
     <>
@@ -21,7 +21,7 @@ export const SongItem2 = (props) => {
         </div>
         {/* Center */}
         <div className="font-[400] text-[14px] text-[#FFFFFF] w-[30%] text-center">
-          {singerName != null ? <>{singerName.join(", ")}</> : <>{singerId}</>}
+          {singer != null ? <>{singer.join(", ")}</> : <>{singerId}</>}
         </div>
         {/* Right  */}
         <div className="flex gap-[18px] w-[30%] justify-end items-center">

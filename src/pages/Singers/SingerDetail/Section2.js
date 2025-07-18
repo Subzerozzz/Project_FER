@@ -31,7 +31,7 @@ export const Section2 = () => {
 
           const newItem = {
             ...item,
-            singerName: singerString,
+            singer: singerString,
           };
           return newItem;
         });

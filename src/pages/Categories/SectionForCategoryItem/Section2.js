@@ -28,7 +28,7 @@ export const Section2 = () => {
               ...item,
               time: "4:32",
               link: `/song/${item.id}`,
-              singerName: singerString,
+              singer: singerString,
             };
 
             return newItem;

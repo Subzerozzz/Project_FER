@@ -6,7 +6,7 @@ export const Wishlist = () => {
     {
       image: "/demo/home/image-9.png",
       title: "Nơi Này Có Anh",
-      singer: "Sơn Tùng M-TP",
+      singer: ["Sơn Tùng M_TP"],
       time: "4.22",
     },
   ];
