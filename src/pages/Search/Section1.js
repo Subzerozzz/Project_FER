@@ -17,7 +17,22 @@ export const Section1 = () => {
       const newData = data.filter((item) =>
         item.title.toLowerCase().includes(keyword.toLowerCase())
       );
-      setData(newData);
+
+      axios.get("http://localhost:9999/singers").then((res2) => {
+        const newData2 = newData.map((item) => {
+          const singerId = item.singerId;
+          let singerString = singerId.map((id) => {
+            return res2.data.find((item) => item.id == id).title;
+          });
+
+          const newItem = {
+            ...item,
+            singer: singerString,
+          };
+          return newItem;
+        });
+        setData(newData2);
+      });
     });
   }, [keyword]);
 
