@@ -1,5 +1,5 @@
-import { FaHeart } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { ButtonHeart } from "../Button/ButtonHeart";
 import { ButtonPlay } from "../Button/ButtonPlay";
 
 export const SongItem = (props) => {
@@ -30,9 +30,10 @@ export const SongItem = (props) => {
             {...props}
             className="p-[10px] rounded-[999px] text-[#FFFFFF] border border-white inner-button-play"
           />
-          <button className="p-[10px] rounded-[999px] text-[#FFFFFF] border border-white">
-            <FaHeart />
-          </button>
+          <ButtonHeart
+            {...props}
+            className="p-[10px] rounded-[999px] text-[#FFFFFF] border border-white"
+          ></ButtonHeart>
         </div>
       </div>
     </>

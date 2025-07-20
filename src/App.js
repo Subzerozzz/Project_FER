@@ -3,6 +3,7 @@ import "./App.css";
 import { LayoutDefault } from "./layouts/LayoutDefault";
 import { NotFound } from "./pages/404NotFound/404NotFound";
 import { LoginPage } from "./pages/Authen/Login";
+import { LogoutPage } from "./pages/Authen/Logout";
 import { RegisterPage } from "./pages/Authen/Register";
 import { Categories } from "./pages/Categories/Categories";
 import { CategoriesLayout } from "./pages/Categories/CategoriesLayout";
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
+            <Route path="logout" element={<LogoutPage />}></Route>
             <Route path="categories" element={<CategoriesLayout />}>
               <Route index element={<Categories />}></Route>
               <Route path=":categoryID" element={<CategoryItem />}></Route>

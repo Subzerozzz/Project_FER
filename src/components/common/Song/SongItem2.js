@@ -1,5 +1,5 @@
-import { FaRegHeart } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { ButtonHeart } from "../Button/ButtonHeart";
 import { ButtonPlay } from "../Button/ButtonPlay";
 
 export const SongItem2 = (props) => {
@@ -26,9 +26,10 @@ export const SongItem2 = (props) => {
         {/* Right  */}
         <div className="flex gap-[18px] w-[30%] justify-end items-center">
           <div className="font-[400] text-[14px] text-[#FFFFFF]">{time}</div>
-          <div className="">
-            <FaRegHeart className="text-[21px] text-[#FFFFFF]" />
-          </div>
+          <ButtonHeart
+            {...props}
+            className="text-[21px] text-[#FFFFFF]"
+          ></ButtonHeart>
         </div>
       </div>
     </>

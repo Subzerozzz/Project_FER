@@ -1,6 +1,5 @@
 {
-  "categories": [
-    {
+  "categories": [{
       "id": 1,
       "image": "https://backend.daca.vn/assets/images/nhac-tre.jpg",
       "title": "Nhạc trẻ",
@@ -43,8 +42,7 @@
       "description": "Tổng hợp nhạc Rock mới nhất"
     }
   ],
-  "singers": [
-    {
+  "singers": [{
       "id": 1,
       "image": "https://backend.daca.vn/assets/images/tang-duy-tan.jpg",
       "title": "Tăng Duy Tân",
@@ -75,8 +73,7 @@
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     }
   ],
-  "songs": [
-    {
+  "songs": [{
       "id": 1,
       "image": "https://backend.daca.vn/assets/images/cat-doi-noi-sau.jpg",
       "title": "Cắt Đôi Nỗi Sầu",
@@ -127,8 +124,7 @@
       "listen": 22800
     }
   ],
-  "accounts": [
-    {
+  "accounts": [{
       "id": 1,
       "fullName": "Lê Văn A",
       "email": "levana@gmail.com",
@@ -157,6 +153,20 @@
       "username": "LeVana",
       "createdAt": "2025-07-20T04:11:03.022Z",
       "signUpAt": "2025-07-20T04:11:03.022Z"
+    },
+    {
+      "id": "zHuyLk",
+      "fullName": "Lê Văn D",
+      "email": "levand@gmail.com",
+      "password": "12345678",
+      "role": "customer",
+      "username": "levand",
+      "createdAt": "2025-07-20T04:29:18.963Z",
+      "signUpAt": "2025-07-20T04:29:18.963Z"
     }
+  ],
+  "wishlist": [
+
   ]
+
 }

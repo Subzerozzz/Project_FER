@@ -1,10 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Title } from "../../components/common/Title/Title";
 
 export const RegisterPage = () => {
   const [accountArray, setAccountArray] = useState([]);
   const [errorEmail, setErrorEmail] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -62,7 +65,10 @@ export const RegisterPage = () => {
     axios
       .post("http://localhost:9999/accounts", newAccount)
       .then(({ item }) => {
+        sessionStorage.setItem("account", newAccount.id);
+        window.dispatchEvent(new Event("accountChange"));
         alert("Đăng ký tài khoản thành công !");
+        navigate("/");
       });
   };
 
