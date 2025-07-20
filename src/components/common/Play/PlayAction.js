@@ -20,10 +20,48 @@ export const PlayAction = () => {
       elementInnerAudio.play();
     }
   };
+
+  const handleBackSong = () => {
+    const elementPlayAudio = document.querySelector(".play-audio");
+    const currentSongID = elementPlayAudio.getAttribute("song-id");
+    const backSongID = parseInt(currentSongID) - 1;
+
+    //Lay ra song-list tren homepage
+    const songList = document.querySelector(".song-list");
+    console.log(songList);
+
+    //lay ra the có id = nextSongID
+    const elementNextSong = songList.querySelector(
+      `[data-song="${backSongID}"]`
+    );
+
+    //lay ra nut button và goi click
+    const innerButton = elementNextSong.querySelector(".inner-button-play");
+    innerButton.click();
+  };
+
+  const handleNextSong = () => {
+    const elementPlayAudio = document.querySelector(".play-audio");
+    const currentSongID = elementPlayAudio.getAttribute("song-id");
+    const nextSongID = parseInt(currentSongID) + 1;
+
+    //Lay ra song-list tren homepage
+    const songList = document.querySelector(".song-list");
+    console.log(songList);
+
+    //lay ra the có id = nextSongID
+    const elementNextSong = songList.querySelector(
+      `[data-song="${nextSongID}"]`
+    );
+
+    //lay ra nut button và goi click
+    const innerButton = elementNextSong.querySelector(".inner-button-play");
+    innerButton.click();
+  };
   return (
     <>
       <div className="flex gap-[42px] text-white items-center justify-center">
-        <button className="w-[10px] h-[12px]">
+        <button onClick={handleBackSong} className="w-[10px] h-[12px]">
           <FaBackwardStep />
         </button>
         <button
@@ -33,7 +71,7 @@ export const PlayAction = () => {
           <FaPlay className="inner-icon-play" />
           <FaPause className="inner-icon-pause hidden" />
         </button>
-        <button className="w-[10px] h-[12px]">
+        <button onClick={handleNextSong} className="w-[10px] h-[12px]">
           <FaForwardStep />
         </button>
       </div>
