@@ -78,9 +78,9 @@ export const SiderMenu = () => {
       <nav className="sider_navbar py-[30px] px-[20px]">
         <ul className="">
           {menu.map((item, index) => (
-            <>
+            <div key={index}>
               {(item.isLogin === isLogin || item.isLogin === "") && (
-                <li className="mb-[30px]" key={index}>
+                <li className="mb-[30px]">
                   <NavLink
                     to={item.link}
                     className="text-[white] font-[700] text-[16px] flex gap-[20px] hover:text-[#00ADEF] capitalize"
@@ -90,7 +90,7 @@ export const SiderMenu = () => {
                   </NavLink>
                 </li>
               )}
-            </>
+            </div>
           ))}
         </ul>
       </nav>

@@ -165,8 +165,15 @@
       "signUpAt": "2025-07-20T04:29:18.963Z"
     }
   ],
-  "wishlist": [
-
+  "wishlists": [{
+      "id": 1753003172088,
+      "accountId": 1,
+      "songId": 1
+    },
+    {
+      "id": 1753005854329,
+      "accountId": 1,
+      "songId": 2
+    }
   ]
-
 }
