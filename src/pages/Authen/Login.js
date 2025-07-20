@@ -1,6 +1,39 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Title } from "../../components/common/Title/Title";
 
 export const LoginPage = () => {
+  const [accountArray, setAccountArray] = useState([]);
+  const navigate = useNavigate();
+  useEffect(() => {
+    axios
+      .get("http://localhost:9999/accounts")
+      .then(({ data }) => setAccountArray(data));
+  }, []);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    //Kiem tra xem tk ton tai trong he thong khong
+    const existAccount = accountArray.find(
+      (item) =>
+        item.email.toLowerCase() === email.toLowerCase() &&
+        item.password.toLowerCase() === password.toLowerCase()
+    );
+
+    if (existAccount === undefined) {
+      alert("Email hoặc mật khẩu chưa chính xác !");
+    } else {
+      sessionStorage.setItem("account", existAccount.id);
+      window.dispatchEvent(new Event("accountChange"));
+      navigate("/");
+    }
+  };
+
   return (
     <>
       <div className="mt-[60px] w-[500px] mx-auto">
@@ -8,7 +41,7 @@ export const LoginPage = () => {
           <Title text="Đăng Nhập Tài Khoản" />
         </div>
 
-        <form>
+        <form onSubmit={handleLogin}>
           {/* Email  */}
           <div className="mb-[15px]">
             <label
@@ -37,7 +70,7 @@ export const LoginPage = () => {
               <span className="text-red-500 ml-[5px]">*</span>
             </label>
             <input
-              type="text"
+              type="password"
               id="password"
               name="password"
               className="h-[50px] w-full  bg-white rounded-[6px] px-[16px] font-[600] text-[14px] outline-none"

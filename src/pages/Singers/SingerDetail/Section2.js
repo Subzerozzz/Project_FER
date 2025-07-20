@@ -21,8 +21,6 @@ export const Section2 = () => {
         }
       });
       axios.get("http://localhost:9999/singers").then((res2) => {
-        console.log(res2.data);
-
         const songArray2 = arraySong.map((item) => {
           const singerId = item.singerId;
           let singerString = singerId.map((id) => {
@@ -31,7 +29,7 @@ export const Section2 = () => {
 
           const newItem = {
             ...item,
-            singerName: singerString,
+            singer: singerString,
           };
           return newItem;
         });

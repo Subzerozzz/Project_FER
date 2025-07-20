@@ -57,7 +57,7 @@ export const Section1 = () => {
         </div>
         <div className="flex-1">
           <Title text="Nghe Nhiều" />
-          <div className="grid gap-[12px]">
+          <div className="grid gap-[12px] song-list">
             {data.length > 0 ? (
               <>
                 {data.map((item) => (

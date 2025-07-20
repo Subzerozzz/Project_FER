@@ -1,11 +1,13 @@
 import { FaPlay } from "react-icons/fa6";
 
 export const ButtonPlay = (props) => {
-  const { image, title, singer, audio, className = "" } = props;
+  const { id, image, title, singer, audio, className = "" } = props;
 
   const handlePlay = () => {
     const elementPlayAudio = document.querySelector(".play-audio");
     if (elementPlayAudio) {
+      //Chen id
+      elementPlayAudio.setAttribute("song-id", id);
       // Phát nhạc
       const elementInnerAudio = elementPlayAudio.querySelector(".inner-audio");
       const elementInnerSource =
