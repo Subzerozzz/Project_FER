@@ -15,7 +15,7 @@ import { SingersPage } from "./pages/Singers/SingersPage";
 import { SongDetail } from "./pages/Song/SongDetail";
 import { SongLayout } from "./pages/Song/SongLayout";
 import { Wishlist } from "./pages/Wishlist/Wishlist";
-import DashBoard from "./pages/Admin/Dashboard";
+import { LayoutAdmin } from "./componentsAdmin/layouts/LayoutAdmin";
 
 function App() {
   return (
@@ -41,7 +41,7 @@ function App() {
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="*" element={<NotFound />}></Route>
           </Route>
-           <Route path="dashboard" element={<DashBoard/>}/>
+           <Route path="dashboard" element={<LayoutAdmin/>}/>
         </Routes>
       </BrowserRouter>
     </>

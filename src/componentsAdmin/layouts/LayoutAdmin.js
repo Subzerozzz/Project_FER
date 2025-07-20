@@ -1,5 +1,5 @@
-import { Outlet } from "react-router-dom";
 import { SiderAdmin } from "./SiderAdmin";
+import DashBoard from "../../pages/Admin/Dashboard";
 export const LayoutAdmin = () => {
   return (
     <>
@@ -11,7 +11,8 @@ export const LayoutAdmin = () => {
             </div>
             <div className="flex-1 mt-[20px]">
             <main className="mb-[150px]">
-                <Outlet />
+                {/* <Outlet /> */}
+                <DashBoard/>
               </main>
             </div>
           </div>
