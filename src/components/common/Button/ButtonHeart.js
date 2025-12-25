@@ -9,14 +9,14 @@ export const ButtonHeart = (props) => {
     const songId = id;
     const wishlistId = Date.now();
 
-    if (accountId == null) {
+    if (!accountId) {
       alert("Vui lòng đăng nhập để sử dụng chức năng này !");
       return;
     }
 
     const { data } = await axios.get("http://localhost:9999/wishlists");
     const check = data.find(
-      (item) => item.accountId === accountId && item.songId === songId
+      (item) => item.accountId == accountId && item.songId == songId
     );
     if (check) {
       alert("Bài hát này đã có trong danh sách yêu thích!");
