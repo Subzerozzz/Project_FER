@@ -7,7 +7,7 @@ export const Section3 = () => {
   const [dataFinal, setDataFinal] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:9999/singers?_limit=5").then((res) => {
+    axios.get("/api/singers?_limit=5").then((res) => {
       const singerArrayRaw = res.data;
       if (singerArrayRaw) {
         const singerArray = singerArrayRaw.map((item) => {

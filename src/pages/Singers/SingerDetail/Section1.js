@@ -9,7 +9,7 @@ export const Section1 = () => {
   const [dataFinal, setDataFinal] = useState();
 
   useEffect(() => {
-    axios.get(`http://localhost:9999/singers/${singerID}`).then((res) => {
+    axios.get(`/api/singers/${singerID}`).then((res) => {
       setDataFinal(res.data);
     });
   }, []);

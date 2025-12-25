@@ -14,7 +14,7 @@ export const ButtonHeart = (props) => {
       return;
     }
 
-    const { data } = await axios.get("http://localhost:9999/wishlists");
+    const { data } = await axios.get("/api/wishlists");
     const check = data.find(
       (item) => item.accountId == accountId && item.songId == songId
     );
@@ -28,11 +28,9 @@ export const ButtonHeart = (props) => {
       songId: songId,
     };
 
-    axios
-      .post("http://localhost:9999/wishlists", newWishList)
-      .then(({ data }) => {
-        alert("Đã thêm bài hát vào danh sách yêu thích");
-      });
+    axios.post("/api/wishlists", newWishList).then(({ data }) => {
+      alert("Đã thêm bài hát vào danh sách yêu thích");
+    });
   };
   return (
     <>

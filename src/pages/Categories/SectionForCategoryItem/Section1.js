@@ -10,7 +10,7 @@ export const Section1 = () => {
   const [dataFinal, setDataFinal] = useState();
 
   useEffect(() => {
-    axios.get(`http://localhost:9999/categories/${categoryID}`).then((res) => {
+    axios.get(`/api/categories/${categoryID}`).then((res) => {
       setDataFinal(res.data);
     });
   }, []);

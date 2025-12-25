@@ -7,7 +7,7 @@ export const Section2 = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:9999/categories").then((res) => {
+    axios.get("/api/categories").then((res) => {
       const categoryArrayRaw = res.data.slice(0, 5);
       if (categoryArrayRaw) {
         const categoryArray = categoryArrayRaw.map((item) => {

@@ -10,7 +10,7 @@ export const Section2 = () => {
   const [dataFinal, setDataFinal] = useState();
 
   useEffect(() => {
-    axios.get(`http://localhost:9999/songs/${songID}`).then((res) => {
+    axios.get(`/api/songs/${songID}`).then((res) => {
       const lyricRaw = res.data.lyric;
       const lyric = lyricRaw.split(".");
 

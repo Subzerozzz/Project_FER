@@ -9,19 +9,17 @@ export const Wishlist = () => {
   const handleData = async () => {
     const accountId = sessionStorage.getItem("account");
     //call toi api wishlist
-    const { data: wishlist } = await axios.get(
-      "http://localhost:9999/wishlists"
-    );
+    const { data: wishlist } = await axios.get("/api/wishlists");
     const songWithAccountId = wishlist.filter(
       (item) => item.accountId == accountId
     );
 
     //lay ra cac bai hat chi tiet
-    const { data: song } = await axios.get(`http://localhost:9999/songs`);
+    const { data: song } = await axios.get(`/api/songs`);
     const songArray = songWithAccountId.map((item) => {
       return song.find((item2) => item2.id == item.songId);
     });
-    axios.get("http://localhost:9999/singers").then((res2) => {
+    axios.get("/api/singers").then((res2) => {
       const songArray2 = songArray.map((item) => {
         const singerId = item.singerId;
         let singerString = singerId.map((id) => {

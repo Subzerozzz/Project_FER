@@ -7,9 +7,7 @@ export const LoginPage = () => {
   const [accountArray, setAccountArray] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    axios
-      .get("http://localhost:9999/accounts")
-      .then(({ data }) => setAccountArray(data));
+    axios.get("/api/accounts").then(({ data }) => setAccountArray(data));
   }, []);
 
   const handleLogin = (event) => {

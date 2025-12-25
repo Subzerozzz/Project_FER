@@ -11,31 +11,29 @@ export const Section2 = () => {
   const [dataFinal, setDataFinal] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:9999/songs?categoryId=${categoryID}`)
-      .then((res) => {
-        const songArray = res.data;
-        console.log(songArray);
+    axios.get(`/api/songs?categoryId=${categoryID}`).then((res) => {
+      const songArray = res.data;
+      console.log(songArray);
 
-        axios.get("http://localhost:9999/singers").then((res2) => {
-          const songArray2 = songArray.map((item) => {
-            const singerId = item.singerId;
-            let singerString = singerId.map((id) => {
-              return res2.data.find((item) => item.id == id).title;
-            });
-
-            const newItem = {
-              ...item,
-              time: "4:32",
-              link: `/song/${item.id}`,
-              singer: singerString,
-            };
-
-            return newItem;
+      axios.get("/api/singers").then((res2) => {
+        const songArray2 = songArray.map((item) => {
+          const singerId = item.singerId;
+          let singerString = singerId.map((id) => {
+            return res2.data.find((item) => item.id == id).title;
           });
-          setDataFinal(songArray2);
+
+          const newItem = {
+            ...item,
+            time: "4:32",
+            link: `/song/${item.id}`,
+            singer: singerString,
+          };
+
+          return newItem;
         });
+        setDataFinal(songArray2);
       });
+    });
   }, []);
 
   return (

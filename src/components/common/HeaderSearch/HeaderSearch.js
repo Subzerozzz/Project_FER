@@ -11,7 +11,7 @@ export const HeaderSearch = () => {
     searchParam.get("keyword") == null ? "" : searchParam.get("keyword");
 
   useEffect(() => {
-    axios.get("http://localhost:9999/songs").then(({ data }) => {
+    axios.get("/api/songs").then(({ data }) => {
       setSongs(data);
     });
   }, []);

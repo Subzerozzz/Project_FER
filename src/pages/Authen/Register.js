@@ -10,9 +10,7 @@ export const RegisterPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:9999/accounts")
-      .then(({ data }) => setAccountArray(data));
+    axios.get("/api/accounts").then(({ data }) => setAccountArray(data));
   }, []);
 
   const generateRandomID = (length) => {
@@ -62,14 +60,12 @@ export const RegisterPage = () => {
       signUpAt: signUp,
     };
 
-    axios
-      .post("http://localhost:9999/accounts", newAccount)
-      .then(({ item }) => {
-        sessionStorage.setItem("account", newAccount.id);
-        window.dispatchEvent(new Event("accountChange"));
-        alert("Đăng ký tài khoản thành công !");
-        navigate("/");
-      });
+    axios.post("/api/accounts", newAccount).then(({ item }) => {
+      sessionStorage.setItem("account", newAccount.id);
+      window.dispatchEvent(new Event("accountChange"));
+      alert("Đăng ký tài khoản thành công !");
+      navigate("/");
+    });
   };
 
   return (

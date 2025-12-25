@@ -10,11 +10,11 @@ export const Section1 = () => {
   const [dataFinal, setDataFinal] = useState();
 
   useEffect(() => {
-    axios.get(`http://localhost:9999/songs/${songID}`).then((res) => {
+    axios.get(`/api/songs/${songID}`).then((res) => {
       const songDetailRaw = res.data;
       const singerID = songDetailRaw.singerId;
 
-      axios.get("http://localhost:9999/singers").then((res2) => {
+      axios.get("/api/singers").then((res2) => {
         const singerName = singerID.map((id) => {
           return res2.data.find((item) => item.id === id).title;
         });

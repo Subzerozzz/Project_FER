@@ -11,14 +11,14 @@ export const Section1 = () => {
   console.log(keyword);
 
   useEffect(() => {
-    axios.get("http://localhost:9999/songs").then(({ data }) => {
+    axios.get("/api/songs").then(({ data }) => {
       console.log(data);
 
       const newData = data.filter((item) =>
         item.title.toLowerCase().includes(keyword.toLowerCase())
       );
 
-      axios.get("http://localhost:9999/singers").then((res2) => {
+      axios.get("/api/singers").then((res2) => {
         const newData2 = newData.map((item) => {
           const singerId = item.singerId;
           let singerString = singerId.map((id) => {

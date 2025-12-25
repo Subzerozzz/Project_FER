@@ -10,30 +10,28 @@ export const Section3 = () => {
   const [dataFinal, setDataFinal] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:9999/songs/${songID}`).then((res) => {
+    axios.get(`/api/songs/${songID}`).then((res) => {
       const categoryID = res.data.categoryId;
-      axios
-        .get(`http://localhost:9999/songs?categoryId=${categoryID}`)
-        .then((res) => {
-          const songArray = res.data;
-          axios.get("http://localhost:9999/singers").then((res2) => {
-            console.log(res2.data);
+      axios.get(`/api/songs?categoryId=${categoryID}`).then((res) => {
+        const songArray = res.data;
+        axios.get("/api/singers").then((res2) => {
+          console.log(res2.data);
 
-            const songArray2 = songArray.map((item) => {
-              const singerId = item.singerId;
-              let singerString = singerId.map((id) => {
-                return res2.data.find((item) => item.id == id).title;
-              });
-
-              const newItem = {
-                ...item,
-                singerName: singerString,
-              };
-              return newItem;
+          const songArray2 = songArray.map((item) => {
+            const singerId = item.singerId;
+            let singerString = singerId.map((id) => {
+              return res2.data.find((item) => item.id == id).title;
             });
-            setDataFinal(songArray2);
+
+            const newItem = {
+              ...item,
+              singerName: singerString,
+            };
+            return newItem;
           });
+          setDataFinal(songArray2);
         });
+      });
     });
   }, []);
   return (

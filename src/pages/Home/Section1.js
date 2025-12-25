@@ -6,9 +6,9 @@ import { Title } from "../../components/common/Title/Title";
 export const Section1 = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:9999/songs").then((res) => {
+    axios.get("/api/songs").then((res) => {
       const songArray = res.data.slice(0, 3);
-      axios.get("http://localhost:9999/singers").then((res2) => {
+      axios.get("/api/singers").then((res2) => {
         console.log(res2.data);
 
         const songArray2 = songArray.map((item) => {

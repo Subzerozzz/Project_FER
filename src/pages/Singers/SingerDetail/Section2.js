@@ -10,7 +10,7 @@ export const Section2 = () => {
   const [dataFinal, setDataFinal] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:9999/songs`).then((res) => {
+    axios.get(`/api/songs`).then((res) => {
       const arraySongRaw = res.data;
       const arraySong = arraySongRaw.filter((item) => {
         const singerIdArray = item.singerId;
@@ -20,7 +20,7 @@ export const Section2 = () => {
           return item;
         }
       });
-      axios.get("http://localhost:9999/singers").then((res2) => {
+      axios.get("/api/singers").then((res2) => {
         const songArray2 = arraySong.map((item) => {
           const singerId = item.singerId;
           let singerString = singerId.map((id) => {
