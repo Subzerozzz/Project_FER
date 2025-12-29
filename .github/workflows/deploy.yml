@@ -1,0 +1,48 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
+          port: 22
+
+          # Sửa đường dẫn /home/ubuntu/Project_FER cho đúng với máy bạn
+          script: |
+            # 1. Vào thư mục dự án và lấy code mới về
+            cd /home/ubuntu/Project_FER
+            git pull origin main
+
+            # 2. Cài đặt các thư viện mới (cho cả FE và BE nếu dùng chung package.json)
+            npm install
+
+            # --- PHẦN BACKEND (API) ---
+            # Restart API để nhận code logic mới
+            sudo systemctl restart music-wave-api
+
+            # --- PHẦN FRONTEND (REACT/NGINX) ---
+            # Bước A: Build ra file tĩnh (Tạo ra thư mục 'build' hoặc 'dist')
+            npm run build
+
+            # Bước B: Xóa sạch file cũ trong thư mục Nginx (Để tránh rác)
+            # Dùng sudo vì thư mục này của root quản lý
+            sudo rm -rf /var/www/html/*
+
+            # Bước C: Copy file vừa build xong vào thư mục Nginx
+            # LƯU Ý: Kiểm tra xem React của bạn build ra folder tên là 'build' hay 'dist' nhé!
+            # Nếu là Vite thì thường là 'dist', Create-React-App là 'build'
+            sudo cp -r build/* /var/www/html/
