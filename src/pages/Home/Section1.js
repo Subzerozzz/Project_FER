@@ -47,7 +47,7 @@ export const Section1 = () => {
               </div>
               <div className="font-[500] text-[#FFFFFF] text-[14px]">
                 Top 100 Nhạc Electronic/Dance Âu Mỹ là danh sách 100 ca khúc hot
-                nhất hiện tại của thể loại Top 100 Nhạc Electronic/Dance Âu Mỹ
+                nhất hiện tại.
               </div>
             </div>
             <div className="mt-[48px] mr-[22px]">
